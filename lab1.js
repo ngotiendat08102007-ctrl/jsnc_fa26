@@ -4,13 +4,13 @@ console.log("day la lab 1");
 // var: ko dung var
 let name = "hoadv";
 name = "hoadv21";
-const age = 36;
+let age = 36;
 
 console.log("Ten toi la: ", name);
 console.log("Tuoi cua toi la:", age);
 
 //bai2
-let age = 20;
+let agee = 20;
 console.log(age); // 20
 
 age = 21;
