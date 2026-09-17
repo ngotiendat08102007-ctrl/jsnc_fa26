@@ -24,3 +24,10 @@ console.log("Tổng: " + (a + b));   // 15
 console.log("Hiệu: " + (a - b));   // 5
 console.log("Tích: " + (a * b));   // 50
 console.log("Thương: " + (a / b)); // 2
+
+//bai4
+function sayHello(name) {
+  console.log(`Xin chào ${name}`);
+}
+
+sayHello("Đạt"); // Xin chào Đạt
