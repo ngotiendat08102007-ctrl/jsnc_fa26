@@ -8,3 +8,19 @@ const age = 36;
 
 console.log("Ten toi la: ", name);
 console.log("Tuoi cua toi la:", age);
+
+//bai2
+let age = 20;
+console.log(age); // 20
+
+age = 21;
+console.log(age); // 21
+
+//bai3
+const a = 10;
+const b = 5;
+
+console.log("Tổng: " + (a + b));   // 15
+console.log("Hiệu: " + (a - b));   // 5
+console.log("Tích: " + (a * b));   // 50
+console.log("Thương: " + (a / b)); // 2
