@@ -60,8 +60,6 @@ for (let i = 0; i < students.length; i++) {
   console.log(students[i].name);
 }
 //truy cập id dom = students
-
-
 let content='';
 for (let i=0; i<students.length; i++){
   content+= `Teen sinh vien: ${students[i],names}<br> `
