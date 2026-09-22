@@ -69,12 +69,40 @@ console.log(content);
 //baitaptonghop
 
 const products = [
-  { id: 1, name: "iPhone 15", price: 20000000 },
-  { id: 2, name: "Samsung Galaxy S24", price: 18000000 },
-  { id: 3, name: "Xiaomi 14", price: 12000000 },
+  {
+    id: 1,
+    name: "iPhone 15",
+    price: 20000000,
+  },
+  {
+    id: 2,
+    name: "Samsung Galaxy S24",
+    price: 18000000,
+  },
+  {
+    id: 3,
+    name: "Xiaomi 14",
+    price: 12000000,
+  },
 ];
-console.log(products);
-for (let i = 0; i < products.length; i++) {
-  console.log(`${products[i].name} - ${products[i].price}`);
+const list=products.map(function(product){
+    return product.id,product.name, product.price;
+});
+console.log(list);
+for(let i=0; i<products.length; i++){
+    console.log("Tên sản phẩm: ", list[i]);
+};
+for(let i=0; i<products.length; i++){
+    console.log("Tên sản phẩm: ", list[i].name, " - Giá: ", list[i].price);
+};
+let totalPrice=0;
+for(let i=0; i<products.length; i++){
+    totalPrice+=products[i].price;
 }
+let productList=document.getElementById("products");
+let productContent='';
+for(let i=0; i<products.length; i++){
+    productContent+=`Tên sản phẩm: ${products[i].name}<br>Giá: ${products[i].price}<br>`;
+}
+productList.innerHTML=productContent;
 
