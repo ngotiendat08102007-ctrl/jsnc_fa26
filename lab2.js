@@ -66,24 +66,19 @@ for (let i = 0; i < students.length; i++) {
 document.getElementById("students").innerHTML = content;
 console.log(content);
 
+//baitaptonghop
+
 const products = [
-  {
-    id: 1,
-    name: "iPhone 15",
-    price: 20000000,
-  },
-  {
-    id: 2,
-    name: "Samsung Galaxy S24",
-    price: 18000000,
-  },
-  {
-    id: 3,
-    name: "Xiaomi 14",
-    price: 12000000,
-  },
+  { id: 1, name: "iPhone 15", price: 20000000 },
+  { id: 2, name: "Samsung Galaxy S24", price: 18000000 },
+  { id: 3, name: "Xiaomi 14", price: 12000000 },
 ];
+
+// Bước 1: In danh sách ra Console
 console.log(products);
-for (let i = 0; i<products.length; i++){
+
+// Bước 2 + 3: Duyệt bằng for, in "Tên - Giá"
+for (let i = 0; i < products.length; i++) {
   console.log(`${products[i].name} - ${products[i].price}`);
 }
+
