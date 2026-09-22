@@ -59,3 +59,13 @@ console.log(students[1].age);
 for (let i = 0; i < students.length; i++) {
   console.log(students[i].name);
 }
+//truy cập id dom = students
+
+
+let content='';
+for (let i=0; i<students.length; i++){
+  content+= `Teen sinh vien: ${students[i],names}<br> `
+}
+document.getElementById("students").innerHTML = content;
+html.innerHTML=content;
+console.log(html);
