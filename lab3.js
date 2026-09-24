@@ -40,6 +40,9 @@ const sum= add(10,20);
 const sumInfo = `Ket qua:${sum}`;
 console.log(sumInfo);
 
+const sayHello = name =>`Xin chao: ${name}`;
+console.log(sayHello("An"));
+
 //Bai25
 const names = "Ngo Tien Dat";
 const agee = 20;
