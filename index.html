@@ -22,14 +22,28 @@
     </nav>
     <div class="max-w-6xl mx-auto mt-10 px-4 text-center">
       <h1 id="title" class="text-2xl font-semibold mb-6">Danh sách sản phẩm</h1>
+      <form id="productSearchForm" class="mb-6 flex flex-wrap justify-center gap-2">
+        <label class="sr-only" for="productSearch">Tìm sản phẩm</label>
+        <input
+          id="productSearch"
+          type="search"
+          placeholder="Tìm theo tên, ID hoặc giá..."
+          class="w-full max-w-md rounded border border-gray-300 px-3 py-2 text-left"
+        />
+        <button type="submit" class="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">Tìm kiếm</button>
+        <button id="clearSearch" type="button" class="rounded border border-gray-300 px-4 py-2 hover:bg-gray-100">Xóa</button>
+      </form>
+
 
       <div class="overflow-x-auto">
         <table class="w-full border border-gray-300 rounded-lg">
           <thead class="bg-gray-100">
             <tr>
+              <th class="px-4 py-2 border border-gray-300">STT</th>
               <th class="px-4 py-2 border border-gray-300">ID</th>
               <th class="px-4 py-2 border border-gray-300">Tên sản phẩm</th>
               <th class="px-4 py-2 border border-gray-300">Giá</th>
+              <th class="px-4 py-2 border border-gray-300">Actions</th>
             </tr>
           </thead>
 
