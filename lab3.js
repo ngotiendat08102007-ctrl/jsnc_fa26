@@ -61,15 +61,43 @@ const doubled = numbers.map((n)=> n*2);
 console.log(doubled);
 
 //bai30
-const sinhvien = [
-  { id: 1, name: "Dat" },
-  { id: 2, name: "Huyen" },
-  { id: 3, name: "datbe" },
-];
-const Info = sinhvien.map((sinhvien)=>{
-    return sinhvien.name
-});
-console.log(sinhvien);
+    const sinhvien = [
+    { id: 1, name: "Dat" },
+    { id: 2, name: "Huyen" },
+    { id: 3, name: "datbe" },
+    ];
+    const Info = sinhvien.map((sinhvien)=>{
+        return sinhvien.name
+    });
+    console.log(sinhvien);
+
+    document.getElementById("students").innerHTML = students
+  .map(
+    (student) => `
+     <tr class="hover:bg-gray-50">
+              <td class="px-4 py-2 border border-gray-300">${student.id}</td>
+              <td class="px-4 py-2 border border-gray-300">${student.name}</td>
+              <td class="px-4 py-2 border border-gray-300">${student.age}</td>
+              <td class="px-4 py-2 border border-gray-300">
+                <div class="flex items-center justify-center gap-2">
+                  <a
+                    href="#"
+                    class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded"
+                  >
+                    Edit
+                  </a>
+
+                  <button
+                    class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+            `,
+  )
+  .join("");
 
 
 
