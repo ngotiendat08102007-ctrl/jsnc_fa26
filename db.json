@@ -3,17 +3,20 @@
     {
       "id": 10,
       "name": "iPhone 15",
-      "price": 25000000
+      "price": 25000000,
+      "category": "Điện thoại"
     },
     {
       "id": 22,
       "name": "Samsung S25",
-      "price": 22000000
+      "price": 22000000,
+      "category": "Điện thoại"
     },
     {
       "id": 3,
       "name": "Xiaomi 15",
-      "price": 18000000
+      "price": 18000000,
+      "category": "Điện thoại"
     }
   ]
 }

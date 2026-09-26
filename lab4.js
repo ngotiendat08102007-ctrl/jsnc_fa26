@@ -1,8 +1,6 @@
-function loadProducts(searchTerm = "") {
+function loadProducts() {
   axios
-  .get("http://localhost:3000/products", {
-    params: searchTerm ? { q: searchTerm } : {},
-  })
+  .get("http://localhost:3000/products")
   .then((response) => {
     const products = response.data;
     document.querySelector("tbody#products").innerHTML = products
@@ -13,6 +11,7 @@ function loadProducts(searchTerm = "") {
             <td class="px-4 py-2 border border-gray-300">${product.id}</td>
             <td class="px-4 py-2 border border-gray-300">${product.name}</td>
             <td class="px-4 py-2 border border-gray-300">${product.price.toLocaleString("vi-VN")} đ</td>
+            <td class="px-4 py-2 border border-gray-300">${product.category}</td>
             <td class="px-4 py-2 border border-gray-300">
               <div class="flex items-center justify-center gap-2">
                 <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
@@ -28,15 +27,5 @@ function loadProducts(searchTerm = "") {
     console.error("Không tải được danh sách sản phẩm:", error);
   });
 }
-
-document.getElementById("productSearchForm").addEventListener("submit", (event) => {
-  event.preventDefault();
-  loadProducts(document.getElementById("productSearch").value.trim());
-});
-
-document.getElementById("clearSearch").addEventListener("click", () => {
-  document.getElementById("productSearch").value = "";
-  loadProducts();
-});
 
 loadProducts();
