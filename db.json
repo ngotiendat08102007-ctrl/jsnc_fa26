@@ -23,6 +23,18 @@
       "price": "3000000",
       "category": "dien thoai",
       "id": 23
+    },
+    {
+      "name": "ngô tiến đạt",
+      "price": "1000000000",
+      "category": "Người",
+      "id": 24
+    },
+    {
+      "name": "ip 18",
+      "price": "56000000",
+      "category": "dien thoai",
+      "id": 25
     }
   ]
 }
