@@ -17,6 +17,12 @@
       "name": "Xiaomi 15",
       "price": 18000000,
       "category": "Điện thoại"
+    },
+    {
+      "name": "ip 200",
+      "price": "3000000",
+      "category": "dien thoai",
+      "id": 23
     }
   ]
 }
