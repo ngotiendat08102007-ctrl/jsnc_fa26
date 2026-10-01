@@ -1,31 +1,57 @@
 function loadProducts() {
   axios
-  .get("http://localhost:3000/products")
-  .then((response) => {
-    const products = response.data;
-    document.querySelector("tbody#products").innerHTML = products
-      .map(
-        (product, index) => `
-          <tr class="hover:bg-gray-50">
-            <td class="px-4 py-2 border border-gray-300">${index + 1}</td>
-            <td class="px-4 py-2 border border-gray-300">${product.id}</td>
-            <td class="px-4 py-2 border border-gray-300">${product.name}</td>
-            <td class="px-4 py-2 border border-gray-300">${product.price.toLocaleString("vi-VN")} đ</td>
-            <td class="px-4 py-2 border border-gray-300">${product.category}</td>
-            <td class="px-4 py-2 border border-gray-300">
-              <div class="flex items-center justify-center gap-2">
-                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
-                <button type="button" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded">Delete</button>
-              </div>
-            </td>
-          </tr>
-        `,
-      )
-      .join("");
-  })
-  .catch((error) => {
-    console.error("Không tải được danh sách sản phẩm:", error);
-  });
+    .get("http://localhost:3000/products")
+    .then((response) => {
+      const products = response.data;
+      const tbody = document.querySelector("tbody#products");
+
+      if (!tbody) return;
+
+      tbody.innerHTML = products
+        .map(
+          (product, index) => `
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-2 border border-gray-300">${index + 1}</td>
+              <td class="px-4 py-2 border border-gray-300">${product.id}</td>
+              <td class="px-4 py-2 border border-gray-300">${product.name}</td>
+              <td class="px-4 py-2 border border-gray-300">${Number(product.price).toLocaleString("vi-VN")} đ</td>
+              <td class="px-4 py-2 border border-gray-300">${product.category}</td>
+              <td class="px-4 py-2 border border-gray-300">
+                <div class="flex items-center justify-center gap-2">
+                  <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">Edit</a>
+                  <button
+                    type="button"
+                    class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                    onclick="deleteProduct(${product.id})"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          `,
+        )
+        .join("");
+    })
+    .catch((error) => {
+      console.error("Không tải được danh sách sản phẩm:", error);
+    });
 }
 
 loadProducts();
+
+function deleteProduct(productId) {
+  const result = confirm("Bạn có chắc chắn muốn xóa không?");
+  if (!result) {
+    return;
+  }
+  axios
+    .delete(`http://localhost:3000/products/${productId}`)
+    .then(() => {
+      console.log(`Sản phẩm với ID ${productId} đã được xóa.`);
+      loadProducts();
+    })
+    .catch((error) => {
+      console.error(`Không thể xóa sản phẩm với ID ${productId}:`, error);
+    });
+}
